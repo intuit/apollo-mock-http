@@ -1,0 +1,25 @@
+{
+  "name": "apollo-mock-http",
+  "version": "1.0.0",
+  "description": "Mocking HTTP responses in Apollo Client",
+  "main": "dist/index.js",
+  "repository": "git@github.intuit.com:vsuram/apollo-mock-http.git",
+  "author": "Vamshi Suram <vamshi_suram@intuit.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "graphql": "^16.6.0"
+  },
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "test": "jest"
+  },
+  "files": [
+    "/dist"
+  ],
+  "dependencies": {
+    "apollo-link": "1.2.14"
+  }
+}
