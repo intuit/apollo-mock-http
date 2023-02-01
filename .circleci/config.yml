@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:18.0.0-browsers
+      - image: cimg/node:18.0.0-browsers
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -35,7 +35,7 @@ jobs:
 
   release:
     docker:
-      - image: circleci/node:18.0.0-browsers
+      - image: cimg/node:18.0.0-browsers
     steps:
       - attach_workspace:
           at: .
@@ -43,7 +43,7 @@ jobs:
 
   coverage:
     docker:
-      - image: circleci/node:18.0.0-browsers
+      - image: cimg/node:18.0.0-browsers
     steps:
       - attach_workspace:
           at: .
