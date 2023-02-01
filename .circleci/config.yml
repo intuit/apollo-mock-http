@@ -65,11 +65,11 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
       - release:
           requires:
             - coverage
           filters:
             branches:
               only:
-                - master
+                - main
