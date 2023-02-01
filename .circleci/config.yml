@@ -1,26 +1,75 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  build:
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      # specify the version you desire here
+      - image: circleci/node:14.17.4-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+    working_directory: ~/apollo-mock-http
+
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+      - run: yarn
+
+      # run tests
+      - run:
+          name: "Run tests"
+          command: yarn test
+
+      # run build
+      - run: yarn build
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  release:
+    docker:
+      - image: circleci/node:14.17.4-browsers
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npx semantic-release
+
+  coverage:
+    docker:
+      - image: circleci/node:14.17.4-browsers
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn test:coverage
+      - store_artifacts:
+          path: coverage
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+
 workflows:
-  say-hello-workflow:
+  version: 2
+  build:
     jobs:
-      - say-hello
+      - build
+      - coverage:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+      - release:
+          requires:
+            - coverage
+          filters:
+            branches:
+              only:
+                - master

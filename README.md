@@ -1,6 +1,8 @@
 # apollo-mock-http
 An easy and maintainable way of injecting mock data into Apollo GraphQL Client for fast feature development decoupled from API/Backend.
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/intuit/apollo-mock-http/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/intuit/apollo-mock-http/tree/main)
+
 ## Usage
 
 ```bash
