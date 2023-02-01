@@ -6,7 +6,7 @@ An easy and maintainable way of injecting mock data into Apollo GraphQL Client f
 ![NPM Version](https://img.shields.io/npm/v/apollo-mock-http)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
-[![All Contributors](https://img.shields.io/github/all-contributors/intuit/apollo-mock-http?color=ee8449&style=flat-square)](#contributors)
+<!-- [![All Contributors](https://img.shields.io/github/all-contributors/intuit/apollo-mock-http?color=ee8449&style=flat-square)](#contributors) -->
 
 ## Usage
 
