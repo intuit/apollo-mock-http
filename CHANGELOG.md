@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.2.0](https://github.com/intuit/apollo-mock-http/compare/v1.1.0...v1.2.0) (2023-02-01)
+
+
+### Features
+
+* allcontributors badge disabled ([b59331a](https://github.com/intuit/apollo-mock-http/commit/b59331aa75e958c9915952df10631c2de3ae15e2))
+
 # [1.1.0](https://github.com/intuit/apollo-mock-http/compare/v1.0.0...v1.1.0) (2023-02-01)
 
 

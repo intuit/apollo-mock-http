@@ -1,6 +1,6 @@
 {
   "name": "apollo-mock-http",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Mocking HTTP responses in Apollo Client",
   "main": "dist/index.js",
   "repository": {
