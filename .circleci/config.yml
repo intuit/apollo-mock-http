@@ -39,7 +39,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: npx semantic-release
+      - run: npx -p node@v18-lts -c "npx semantic-release"
 
   coverage:
     docker:
