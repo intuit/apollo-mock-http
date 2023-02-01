@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.1.0](https://github.com/intuit/apollo-mock-http/compare/v1.0.0...v1.1.0) (2023-02-01)
+
+
+### Features
+
+* all contributors integration ([d891e08](https://github.com/intuit/apollo-mock-http/commit/d891e08610829d63917bf33a9574b6849d60b289))
+
 # 1.0.0 (2023-02-01)
 
 
