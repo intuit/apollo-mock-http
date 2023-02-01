@@ -1,2 +1,2 @@
-export { injectMock, createMockLink, MockLink } from "./mocker"
+export { injectMock, MockLink } from "./mocker"
 
