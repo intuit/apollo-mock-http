@@ -24,7 +24,7 @@
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "test": "jest",
-    "test:coverage": "yarn test --coverage && cat ./coverage/lcov.info | coveralls",
+    "test:coverage": "yarn test --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "files": [
     "/dist"
