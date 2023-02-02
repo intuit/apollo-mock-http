@@ -14,6 +14,8 @@ An easy and maintainable way of injecting mock data into Apollo GraphQL Client f
 yarn add apollo-mock-http -D
 ```
 
+If you want a quick hands-on with the project, you can checkout this **[example usage in CodeSandbox](https://codesandbox.io/s/apollo-mock-http-example-7nwheq)**
+
 ```javascript
 import { injectMock } from 'apollo-mock-http';
 
@@ -43,7 +45,7 @@ injectMock({
     {linkName: 'L1', linkObj: new ApolloLink()}
 
   In case, your links are more direct `createCustomLinkObj: (generatedMockLink) => generatedMockLink`
-  
+
   you can use this function to generate object containing mock link
   */
   createCustomLinkObj: (generatedMockLink) => {
