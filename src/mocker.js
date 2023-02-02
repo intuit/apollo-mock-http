@@ -1,27 +1,6 @@
 
 import { ApolloLink, Observable } from 'apollo-link';
 
-/*
-
-mockLinkConfig = {
-  links,
-
-  // Switch between mock and real with a flick :)
-  enableMock: true,
-
-  // You can mock few of queries/mutations too
-  targetOperations: ['getCompanyName', 'getCompanyEmployees'],
-
-  // All the mock data for various queries
-  mockData: {
-    'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
-    'getCompanyEmployees': {data: {employees: ['TestUser'], __typename: 'Employee'}, error: null},
-    'getCompanyId': {data: {id: '123', __typename: 'CompanyID'}, error: null},
-    ...
-  }
-}
-
-*/
 export class MockLink extends ApolloLink {
   constructor(mockLinkConfig) {
     super();
