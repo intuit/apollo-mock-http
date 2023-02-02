@@ -28,7 +28,7 @@ injectMock({
   targetOperations: ['getCompanyName', 'getCompanyEmployees'],
   
   // Mock data configurations for various operations
-  mockDataConfig: {                                            
+  mockData: {                                            
     'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
     'getCompanyEmployees': {data: {employees: ['TestUser'], __typename: 'Employee'}, error: null},
     'getCompanyId': {data: {id: '123', __typename: 'CompanyID'}, error: null},
@@ -41,6 +41,9 @@ injectMock({
 
   In case, your links follow some structure like 
     {linkName: 'L1', linkObj: new ApolloLink()}
+
+  In case, your links are more direct `createCustomLinkObj: (generatedMockLink) => generatedMockLink`
+  
   you can use this function to generate object containing mock link
   */
   createCustomLinkObj: (generatedMockLink) => {
@@ -58,18 +61,6 @@ injectMock({
 In order to be able mock responses, we will inject a mock link into the link chain that the Apollo Client uses., and based on the configuration the relevant mocked response is returned.
 
 [![Watch the video](./docs/architecture.gif)](./docs/architecture.gif)
-
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 
 ## Contributing
