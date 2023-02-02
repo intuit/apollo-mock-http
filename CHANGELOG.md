@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.2.1](https://github.com/intuit/apollo-mock-http/compare/v1.2.0...v1.2.1) (2023-02-02)
+
+
+### Bug Fixes
+
+* mockdata config attributes fixed ([eb1ca0c](https://github.com/intuit/apollo-mock-http/commit/eb1ca0cf980e99a5436b8c635c218c00df357230))
+
 # [1.2.0](https://github.com/intuit/apollo-mock-http/compare/v1.1.0...v1.2.0) (2023-02-01)
 
 
