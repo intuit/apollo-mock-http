@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.3.0](https://github.com/intuit/apollo-mock-http/compare/v1.2.1...v1.3.0) (2023-02-02)
+
+
+### Features
+
+* example usage in codesandbox added ([b568d90](https://github.com/intuit/apollo-mock-http/commit/b568d9091c276827e29808ff0a8e19846dd609f3))
+
 ## [1.2.1](https://github.com/intuit/apollo-mock-http/compare/v1.2.0...v1.2.1) (2023-02-02)
 
 
