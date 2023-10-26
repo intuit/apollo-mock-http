@@ -31,9 +31,9 @@ injectMock({
   
   // Mock data configurations for various operations
   mockData: {                                            
-    'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
-    'getCompanyEmployees': {data: {employees: ['TestUser'], __typename: 'Employee'}, error: null},
-    'getCompanyId': {data: {id: '123', __typename: 'CompanyID'}, error: null},
+    'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
+    'getCompanyEmployees': {data: {employees: ['TestUser'], __typename: 'Employee'}, errors: null},
+    'getCompanyId': {data: {id: '123', __typename: 'CompanyID'}, errors: null},
     ...
   },
 
