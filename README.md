@@ -60,6 +60,22 @@ injectMock({
 
 ```
 
+For simulating error scenarios, use `errors` attribute in the mock response as below
+```javascript
+mockData: {                                            
+  'getCompanyName': {
+    
+    data: null,
+    
+    // Attribute (error or errors) usually depends on how your Error Links consume response. But this is a standard response Apollo Client can handle.
+    errors: [{
+      message: 'sample error'
+    }]
+  },
+},
+```
+
+
 ## Architecture
 
 In order to be able mock responses, we will inject a mock link into the link chain that the Apollo Client uses., and based on the configuration the relevant mocked response is returned.

@@ -14,7 +14,7 @@ describe('MockLink Overall', () => {
       enableMock: true,
       targetOperations: ['getCompanyName'],
       mockData: {
-        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
+        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
       },
       createCustomLinkObj: null,
     });
@@ -30,7 +30,7 @@ describe('MockLink Overall', () => {
       enableMock: undefined,
       targetOperations: ['getCompanyName'],
       mockData: {
-        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
+        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
       },
       createCustomLinkObj: null,
     });
@@ -49,7 +49,7 @@ describe('MockLink Overall', () => {
       enableMock: true,
       targetOperations: ['getCompanyName'],
       mockData: {
-        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
+        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
       },
       createCustomLinkObj: (mockLink) => ({
         linkName: 'customMockLink',
@@ -71,7 +71,7 @@ describe('MockLink Overall', () => {
       enableMock: true,
       targetOperations: ['getCompanyName'],
       mockData: {
-        'getCompanyName': { data: { name: 'Test', __typename: 'String' }, error: null },
+        'getCompanyName': { data: { name: 'Test', __typename: 'String' }, errors: null },
       },
       createCustomLinkObj: null,
     };
@@ -106,7 +106,7 @@ describe('MockLink Overall', () => {
       enableMock: true,
       targetOperations: [],
       mockData: {
-        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
+        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
       },
       createCustomLinkObj: null,
     });
@@ -128,7 +128,7 @@ describe('MockLink Overall', () => {
       enableMock: false,
       targetOperations: ['getCompanyName'],
       mockData: {
-        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, error: null},
+        'getCompanyName': {data: {name: 'Test', __typename: 'String'}, errors: null},
       },
       createCustomLinkObj: null,
     });
