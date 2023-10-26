@@ -8,6 +8,8 @@ An easy and maintainable way of injecting mock data into Apollo GraphQL Client f
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 <!-- [![All Contributors](https://img.shields.io/github/all-contributors/intuit/apollo-mock-http?color=ee8449&style=flat-square)](#contributors) -->
 
+Checkout the [Downloads trend](https://npm-stat.com/charts.html?package=apollo-mock-http)!
+
 ## Usage
 
 ```bash
