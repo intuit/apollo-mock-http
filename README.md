@@ -8,6 +8,8 @@ An easy and maintainable way of injecting mock data into Apollo GraphQL Client f
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 <!-- [![All Contributors](https://img.shields.io/github/all-contributors/intuit/apollo-mock-http?color=ee8449&style=flat-square)](#contributors) -->
 
+Checkout the [Downloads trend](https://npm-stat.com/charts.html?package=apollo-mock-http)!
+
 ## Usage
 
 ```bash
@@ -57,6 +59,22 @@ injectMock({
 })
 
 ```
+
+For simulating error scenarios, use `errors` attribute in the mock response as below
+```javascript
+mockData: {                                            
+  'getCompanyName': {
+    
+    data: null,
+    
+    // Attribute (error or errors) usually depends on how your Error Links consume response. But this is a standard response Apollo Client can handle.
+    errors: [{
+      message: 'sample error'
+    }]
+  },
+},
+```
+
 
 ## Architecture
 
