@@ -1,5 +1,17 @@
 # Semantic Versioning Changelog
 
+# [1.4.0](https://github.com/intuit/apollo-mock-http/compare/v1.3.0...v1.4.0) (2023-10-27)
+
+
+### Bug Fixes
+
+* update test cases ([25abf49](https://github.com/intuit/apollo-mock-http/commit/25abf49d04b0beb693da66352aebc1395df5919c))
+
+
+### Features
+
+* removing structure for default dummy link ([01f4f0d](https://github.com/intuit/apollo-mock-http/commit/01f4f0d57b84a4db9a8448dd04cde98cb7363045))
+
 # [1.3.0](https://github.com/intuit/apollo-mock-http/compare/v1.2.1...v1.3.0) (2023-02-02)
 
 
