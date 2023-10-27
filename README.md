@@ -40,8 +40,7 @@ injectMock({
   },
 
   /* [Optional]
-  The default mockLink that gets injected into your links chain is of the following structure
-    {name: 'mockHttp', link: mockLink}
+  By default, the mockLink that gets injected into your links chain is an instance of MockLink
 
   In case, your links follow some structure like 
     {linkName: 'L1', linkObj: new ApolloLink()}
