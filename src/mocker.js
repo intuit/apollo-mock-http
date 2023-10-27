@@ -40,10 +40,7 @@ export const injectMock = ({ links, enableMock = true, targetOperations, mockDat
     targetOperations
   });
 
-  const mockLinkObj = createCustomLinkObj ? createCustomLinkObj(mockLink) : {
-    name: 'mockHttp',
-    link: mockLink
-  };
+  const mockLinkObj = createCustomLinkObj ? createCustomLinkObj(mockLink) : mockLink;
 
   links.splice(links.length - 1, 0, mockLinkObj);
 }
