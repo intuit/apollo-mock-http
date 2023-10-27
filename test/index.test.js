@@ -19,8 +19,7 @@ describe('MockLink Overall', () => {
       createCustomLinkObj: null,
     });
     expect(links.length).toBe(2);
-    expect(links[0].name).toBe('mockHttp');
-    expect(links[0].link.constructor).toBe(mocker.MockLink);
+    expect(links[0].constructor).toBe(mocker.MockLink);
   });
 
   it('Should inject mockLink with default enabled mock', () => {
@@ -35,8 +34,7 @@ describe('MockLink Overall', () => {
       createCustomLinkObj: null,
     });
     expect(links.length).toBe(2);
-    expect(links[0].name).toBe('mockHttp');
-    expect(links[0].link.constructor).toBe(mocker.MockLink);
+    expect(links[0].constructor).toBe(mocker.MockLink);
   });
 
   it('Should inject custom structured mockLink', () => {
@@ -77,10 +75,9 @@ describe('MockLink Overall', () => {
     };
     mocker.injectMock(mockDataConfig);
     expect(links.length).toBe(2);
-    expect(links[0].name).toBe('mockHttp');
-    expect(links[0].link.constructor).toBe(mocker.MockLink);
+    expect(links[0].constructor).toBe(mocker.MockLink);
     const forwardSpy = jest.fn();
-    const mockLink = links[0].link;
+    const mockLink = links[0];
     const op = {operationName: 'getCompanyName'};
     const observableObj = mockLink.request(op, forwardSpy);
     const fakeObserver = {
@@ -111,11 +108,10 @@ describe('MockLink Overall', () => {
       createCustomLinkObj: null,
     });
     expect(links.length).toBe(2);
-    expect(links[0].name).toBe('mockHttp');
-    expect(links[0].link.constructor).toBe(mocker.MockLink);
+    expect(links[0].constructor).toBe(mocker.MockLink);
     // mocklink request operation.. forward spy
     const forwardSpy = jest.fn();
-    const mockLink = links[0].link;
+    const mockLink = links[0];
     const op = {operationName: 'getCompanyName'};
     mockLink.request(op, forwardSpy);
     expect(forwardSpy).toHaveBeenCalledWith(op);
@@ -133,11 +129,10 @@ describe('MockLink Overall', () => {
       createCustomLinkObj: null,
     });
     expect(links.length).toBe(2);
-    expect(links[0].name).toBe('mockHttp');
-    expect(links[0].link.constructor).toBe(mocker.MockLink);
+    expect(links[0].constructor).toBe(mocker.MockLink);
     // mocklink request operation.. forward spy
     const forwardSpy = jest.fn();
-    const mockLink = links[0].link;
+    const mockLink = links[0];
     const op = {operationName: 'getCompanyName'};
     mockLink.request(op, forwardSpy);
     expect(forwardSpy).toHaveBeenCalledWith(op);
