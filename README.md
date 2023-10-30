@@ -40,13 +40,10 @@ injectMock({
   },
 
   /* [Optional]
-  By default, the mockLink that gets injected into your links chain is an instance of MockLink
+  By default, the mock link gets injected directly into the chain of links which is provided.
 
   In case, your links follow some structure like 
     {linkName: 'L1', linkObj: new ApolloLink()}
-
-  In case, your links are more direct `createCustomLinkObj: (generatedMockLink) => generatedMockLink`
-
   you can use this function to generate object containing mock link
   */
   createCustomLinkObj: (generatedMockLink) => {
