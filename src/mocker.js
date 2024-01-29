@@ -1,5 +1,4 @@
-
-import { ApolloLink, Observable } from 'apollo-link';
+import { ApolloLink, Observable } from "apollo-link";
 
 export class MockLink extends ApolloLink {
   constructor(mockLinkConfig) {
@@ -9,8 +8,8 @@ export class MockLink extends ApolloLink {
 
   request(operation, forward) {
     const { enableMock, targetOperations } = this.config;
-    const isOperationMocked = targetOperations.find(
-      (query) => query === operation.operationName
+    const isOperationMocked = targetOperations.includes(
+      operation.operationName
     );
     if (enableMock && isOperationMocked) {
       return new Observable((observer) => {
@@ -33,14 +32,22 @@ export class MockLink extends ApolloLink {
  * mockData - data config for success / error responses
  * createCustomLinkObj - to create link object as per user's links structure
  */
-export const injectMock = ({ links, enableMock = true, targetOperations, mockData, createCustomLinkObj }) => {
+export const injectMock = ({
+  links,
+  enableMock = true,
+  targetOperations,
+  mockData,
+  createCustomLinkObj,
+}) => {
   const mockLink = new MockLink({
     enableMock,
     mockData,
-    targetOperations
+    targetOperations,
   });
 
-  const mockLinkObj = createCustomLinkObj ? createCustomLinkObj(mockLink) : mockLink;
+  const mockLinkObj = createCustomLinkObj
+    ? createCustomLinkObj(mockLink)
+    : mockLink;
 
   links.splice(links.length - 1, 0, mockLinkObj);
-}
+};
