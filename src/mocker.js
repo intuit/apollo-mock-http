@@ -3,7 +3,14 @@ import { ApolloLink, Observable } from "apollo-link";
 export class MockLink extends ApolloLink {
   constructor(mockLinkConfig) {
     super();
-    this.config = mockLinkConfig;
+    const dataStringFromLocalStorage = localStorage.getItem("AMH_mockdata");
+    const mockDataFromLocalStorage = JSON.parse(dataStringFromLocalStorage);
+    const { enableMock, mockData, targetOperations } = mockLinkConfig;
+    this.config = {
+      enableMock,
+      mockData: mockData ? mockData : mockDataFromLocalStorage,
+      targetOperations,
+    };
   }
 
   request(operation, forward) {
