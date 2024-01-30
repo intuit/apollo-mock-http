@@ -10,7 +10,7 @@ An easy and maintainable way of injecting mock data into Apollo GraphQL Client f
 
 <!-- [![All Contributors](https://img.shields.io/github/all-contributors/intuit/apollo-mock-http?color=ee8449&style=flat-square)](#contributors) -->
 
-Checkout the [Downloads trend](https://npm-stat.com/charts.html?package=apollo-mock-http)!
+Checkout the library [apollo-mock-http](https://www.npmjs.com/package/apollo-mock-http) on NPM, and it's [Downloads trend](https://npm-stat.com/charts.html?package=apollo-mock-http)!
 
 ## Usage
 
