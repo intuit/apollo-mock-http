@@ -19,11 +19,17 @@ jobs:
       - checkout
 
       - run: yarn
-
+      
       - run:
-          name: Danger
-          command: yarn danger ci
-          
+          name: Install DangerJS
+          command: npm install -g danger
+      - run:
+          name: Run DangerJS
+          command: danger
+      # - run:
+      #     name: Danger
+      #     command: yarn danger ci
+
       # run tests
       - run:
           name: "Run tests"
