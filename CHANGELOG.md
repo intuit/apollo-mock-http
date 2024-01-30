@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.4.1](https://github.com/intuit/apollo-mock-http/compare/v1.4.0...v1.4.1) (2024-01-30)
+
+
+### Bug Fixes
+
+* fixing releases - missing semantic commits ([b7dea2f](https://github.com/intuit/apollo-mock-http/commit/b7dea2fb265baa86154177003d931d631e81e045))
+
 # [1.4.0](https://github.com/intuit/apollo-mock-http/compare/v1.3.0...v1.4.0) (2023-10-27)
 
 
