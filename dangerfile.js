@@ -153,4 +153,5 @@ const prTitle = danger.github.pr.title;
 const prTitlePrefix = prTitle.split(":")[0].toLowerCase();
 
 if (!allowedPrefixes.includes(prTitlePrefix)) {
-  warn(`Please start the PR title with one of the following prefixes: ${allowedPrefixes.join(", ")}.`);
+  warn(`Please start the PR title with one of the following prefixes: ${allowedPrefixes.join(", ")}.`)
+  
