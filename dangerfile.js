@@ -22,6 +22,11 @@ if (pr.additions + pr.deletions > bigPRThreshold) {
   warn(':exclamation: Big PR');
 }
 
+// Gather changes
+const modifiedFiles = danger.git.modified_files.filter(path =>
+  path.endsWith('js')
+);
+
 // Check for console.log statements
 modifiedFiles.forEach(file => {
   const content = fs.readFileSync(file).toString();
