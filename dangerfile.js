@@ -99,37 +99,58 @@
 //   warn(output);
 // }
 
-const { load } = require('@commitlint/load');
-const { lint } = require('@commitlint/lint');
-const { rules } = require('./commitlint.config');
+// const { load } = require('@commitlint/load');
+// const { lint } = require('@commitlint/lint');
+// const { rules } = require('./commitlint.config');
 
-const validateCommitMessage = async () => {
-  const commitMessage = await fetchMergeCommitMessage();
-  const results = await lint(commitMessage, rules);
+// const validateCommitMessage = async () => {
+//   const commitMessage = await fetchMergeCommitMessage();
+//   const results = await lint(commitMessage, rules);
 
-  results.forEach((result) => {
-    const formattedResult = formatResult(result);
+//   results.forEach((result) => {
+//     const formattedResult = formatResult(result);
 
-    if (result.valid) {
-      message(formattedResult);
-    } else {
-      fail(formattedResult);
-    }
-  });
-};
+//     if (result.valid) {
+//       message(formattedResult);
+//     } else {
+//       fail(formattedResult);
+//     }
+//   });
+// };
 
-const formatResult = (result) => {
-  return result.errors
-    .concat(result.warnings)
-    .map((message) => `  ${message}`)
-    .join('\n');
-};
+// const formatResult = (result) => {
+//   return result.errors
+//     .concat(result.warnings)
+//     .map((message) => `  ${message}`)
+//     .join('\n');
+// };
 
-load(rules)
-  .then(() => {
-    validateCommitMessage();
-  })
-  .catch((error) => {
-    console.error(error.stack);
-    process.exit(1);
-  });
+// load(rules)
+//   .then(() => {
+//     validateCommitMessage();
+//   })
+//   .catch((error) => {
+//     console.error(error.stack);
+//     process.exit(1);
+//   });
+const { danger, warn } = require("danger");
+
+const allowedPrefixes = [
+  'feat',
+  'fix',
+  'chore',
+  'refactor',
+  'style',
+  'test',
+  'perf',
+  'ci',
+  'build',
+  'docs',
+];
+
+// Check if the PR title starts with an allowed prefix
+const prTitle = danger.github.pr.title;
+const prTitlePrefix = prTitle.split(":")[0].toLowerCase();
+
+if (!allowedPrefixes.includes(prTitlePrefix)) {
+  warn(`Please start the PR title with one of the following prefixes: ${allowedPrefixes.join(", ")}.`);
