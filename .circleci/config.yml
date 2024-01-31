@@ -21,11 +21,10 @@ jobs:
       - run: yarn
       
       - run:
-          name: Install DangerJS
-          command: npm install -g danger
-      - run:
-          name: Run DangerJS
-          command: danger
+          name: Danger
+          command: 
+            yarn danger ci
+            danger
       # - run:
       #     name: Danger
       #     command: yarn danger ci
