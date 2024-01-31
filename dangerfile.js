@@ -68,7 +68,7 @@ const allowedPrefixes = [
 
 // Check if the PR title starts with an allowed prefix
 const prTitle = danger.github.pr.title;
-const prTitlePrefix = prTitle.split(":")[0].toLowerCase();
+const prTitlePrefix = prTitle.split(":")[0].toLowerCase().trimEnd();
 
 if (!allowedPrefixes.includes(prTitlePrefix)) {
   fail(`Please start the PR title with one of the following prefixes: ${allowedPrefixes.join(", ")}.`);
