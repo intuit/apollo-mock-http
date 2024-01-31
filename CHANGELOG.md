@@ -1,5 +1,13 @@
 # Semantic Versioning Changelog
 
+## [1.4.2](https://github.com/intuit/apollo-mock-http/compare/v1.4.1...v1.4.2) (2024-01-31)
+
+
+### Bug Fixes
+
+* danger step correction ([233e238](https://github.com/intuit/apollo-mock-http/commit/233e238c2c06debb8b21e3c24d7d2ebe9a8d97e8))
+* fix compilation ([6eb89c5](https://github.com/intuit/apollo-mock-http/commit/6eb89c5e18dda418581f6aa3e9fd155ad77ea1cb))
+
 ## [1.4.1](https://github.com/intuit/apollo-mock-http/compare/v1.4.0...v1.4.1) (2024-01-30)
 
 
