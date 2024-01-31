@@ -19,6 +19,12 @@ jobs:
       - checkout
 
       - run: yarn
+      
+      - run:
+          name: Danger
+          command: 
+            yarn danger ci
+            danger
 
       # run tests
       - run:
