@@ -5,16 +5,19 @@ export class MockLink extends ApolloLink {
     super();
     const dataStringFromLocalStorage = localStorage.getItem("AMH_mockdata");
     const mockDataFromLocalStorage = JSON.parse(dataStringFromLocalStorage);
-    const { enableMock, mockData, targetOperations } = mockLinkConfig;
+    const { enableMock, mockData, targetOperations, defaultAPICallDuration } =
+      mockLinkConfig;
     this.config = {
       enableMock,
       mockData: mockData ? mockData : mockDataFromLocalStorage,
       targetOperations,
+      defaultAPICallDuration,
     };
   }
 
   request(operation, forward) {
-    const { enableMock, targetOperations } = this.config;
+    const { enableMock, targetOperations, defaultAPICallDuration } =
+      this.config;
     const isOperationMocked = targetOperations.includes(
       operation.operationName
     );
@@ -25,7 +28,7 @@ export class MockLink extends ApolloLink {
           const relatedMockdata = this.config.mockData[operation.operationName];
           observer.next(relatedMockdata);
           observer.complete();
-        }, 2000);
+        }, defaultAPICallDuration);
       });
     }
     return forward(operation);
@@ -45,11 +48,13 @@ export const injectMock = ({
   targetOperations,
   mockData,
   createCustomLinkObj,
+  defaultAPICallDuration = 2000,
 }) => {
   const mockLink = new MockLink({
     enableMock,
     mockData,
     targetOperations,
+    defaultAPICallDuration,
   });
 
   const mockLinkObj = createCustomLinkObj

@@ -31,6 +31,7 @@ describe("MockLink Overall", () => {
         },
       },
       createCustomLinkObj: null,
+      defaultAPICallDuration: 2000,
     });
     expect(links.length).toBe(2);
     expect(links[0].constructor).toBe(mocker.MockLink);
@@ -49,6 +50,7 @@ describe("MockLink Overall", () => {
         },
       },
       createCustomLinkObj: null,
+      defaultAPICallDuration: 2000,
     });
     expect(links.length).toBe(2);
     expect(links[0].constructor).toBe(mocker.MockLink);
@@ -75,6 +77,7 @@ describe("MockLink Overall", () => {
         linkName: "customMockLink",
         linkObj: mockLink,
       }),
+      defaultAPICallDuration: 2000,
     });
     expect(links.length).toBe(2);
     expect(links[0].linkName).toBe("customMockLink");
@@ -97,6 +100,7 @@ describe("MockLink Overall", () => {
         },
       },
       createCustomLinkObj: null,
+      defaultAPICallDuration: 2000,
     };
     mocker.injectMock(mockDataConfig);
     expect(links.length).toBe(2);
@@ -135,6 +139,7 @@ describe("MockLink Overall", () => {
         },
       },
       createCustomLinkObj: null,
+      defaultAPICallDuration: 2000,
     });
     expect(links.length).toBe(2);
     expect(links[0].constructor).toBe(mocker.MockLink);
@@ -159,6 +164,7 @@ describe("MockLink Overall", () => {
         },
       },
       createCustomLinkObj: null,
+      defaultAPICallDuration: 2000,
     });
     expect(links.length).toBe(2);
     expect(links[0].constructor).toBe(mocker.MockLink);
@@ -188,6 +194,7 @@ describe("MockLink Overall", () => {
       enableMock: true,
       targetOperations: ["getCompanyName"],
       createCustomLinkObj: null,
+      defaultAPICallDuration: 3000,
     };
     mocker.injectMock(mockDataConfig);
     expect(links.length).toBe(2);
@@ -208,7 +215,7 @@ describe("MockLink Overall", () => {
     expect(forwardSpy).not.toHaveBeenCalledWith(op);
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 2000);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
     expect(localStorageSpy).toHaveBeenCalledWith("AMH_mockdata");
   });
 });
