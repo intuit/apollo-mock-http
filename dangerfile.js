@@ -57,6 +57,7 @@ const allowedPrefixes = [
   'feat',
   'fix',
   'chore',
+  'chore(deps)',
   'refactor',
   'style',
   'test',
